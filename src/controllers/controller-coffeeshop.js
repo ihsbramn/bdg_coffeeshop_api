@@ -46,6 +46,28 @@ module.exports = {
             connection.release();
         })
     },
+
+    // search data coffeeshop berdasarkan name
+    getDataCoffeeshopBySearchName(req, res) {
+        let name = req.body.name
+        pool.getConnection(function(err, connection) {
+            if (err) throw err;
+            connection.query(
+                `
+                SELECT * FROM tb_coffeeshop WHERE name LIKE ?;
+                `, [name],
+                function(error, results) {
+                    if (error) throw error;
+                    res.send({
+                        success: true,
+                        message: 'Success',
+                        data: results
+                    });
+                });
+            connection.release();
+        })
+    },
+
     // Simpan data coffeeshop
     addDataCoffeeshop(req, res) {
         let data = {

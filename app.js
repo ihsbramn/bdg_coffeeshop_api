@@ -8,6 +8,8 @@ app.use(bodyParser.json())
 const appRoute = require('./src/routes/route-coffeeshop')
 app.use('/', appRoute)
 
-app.listen(8080, () => {
-    console.log('Server Running at :8080');
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log('Server Running ' + port);
 })
