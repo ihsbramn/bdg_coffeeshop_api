@@ -11,12 +11,12 @@ router.get('/get/:id', coffeeshop.getDataCoffeeshopByID);
 router.post('/search/', coffeeshop.getDataCoffeeshopBySearchName);
 
 // POST localhost:8080/coffeeshop/add => Tambah data coffeeshop ke database
-router.post('/add', coffeeshop.addDataCoffeeshop);
+// router.post('/add', coffeeshop.addDataCoffeeshop);
 
 // POST localhost:8080/coffeeshop/2 => Edit data coffeeshop
-router.post('/edit', coffeeshop.editDataCoffeeshop);
+// router.post('/edit', coffeeshop.editDataCoffeeshop);
 
 // POST localhost:8080/coffeeshop/delete => Delete data coffeeshop
-router.post('/delete/', coffeeshop.deleteDataCoffeeshop);
+// router.post('/delete/', coffeeshop.deleteDataCoffeeshop);
 
 module.exports = router;
