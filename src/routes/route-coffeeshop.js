@@ -5,7 +5,7 @@ const { coffeeshop } = require('../controllers');
 router.get('/get', coffeeshop.getDataCoffeeshop);
 
 // GET localhost:8080/coffeeshop/2 => Ambil data semua coffeeshop berdasarkan id = 2
-router.get('/:id', coffeeshop.getDataCoffeeshopByID);
+router.get('/get/:id', coffeeshop.getDataCoffeeshopByID);
 
 // GET localhost:8080/coffeeshop/2 => Ambil data semua coffeeshop berdasarkan nama 
 router.post('/search/', coffeeshop.getDataCoffeeshopBySearchName);

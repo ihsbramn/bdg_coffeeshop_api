@@ -55,7 +55,7 @@ module.exports = {
             connection.query(
                 `
                 SELECT * FROM tb_coffeeshop WHERE name LIKE ?;
-                `, [name],
+                `, ['%' + name + '%'],
                 function(error, results) {
                     if (error) throw error;
                     res.send({
