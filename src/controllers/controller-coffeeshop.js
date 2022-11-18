@@ -135,5 +135,27 @@ module.exports = {
                 });
             connection.release();
         })
+    },
+
+    // nearest data coffeeshop
+    nearestDataCoffeeshop(req, res) {
+        let lat = req.body.lat
+        let lng = req.body.lng
+        pool.getConnection(function(err, connection) {
+            if (err) throw err;
+            connection.query(
+                `
+                SELECT FROM tb_coffeeshop WHERE id = ?;
+                `, [lat, lng, lat],
+                function(error, results) {
+                    if (error) throw error;
+                    res.send({
+                        success: true,
+                        message: 'Success'
+                    });
+                });
+            connection.release();
+        })
     }
+
 }
